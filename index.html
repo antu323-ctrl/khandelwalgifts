@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khandelwal Gifts Centre - Toy Shop & Family Gifts</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fdf4ff',
+              100: '#fae8ff',
+              500: '#d946ef',
+              600: '#c026d3',
+              700: '#a21caf',
+            },
+            accent: {
+              500: '#06b6d4',
+              600: '#0891b2',
+            }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Password mask to prevent browser autofill/suggest password prompts */
+    .masked-password-field {
+      -webkit-text-security: disc;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20 gap-2">
+        <!-- Logo & Branding -->
+        <div class="flex items-center gap-2.5 sm:gap-3 cursor-pointer" onclick="navigateTab('shop')">
+          <div id="storeLogoContainer" class="h-14 sm:h-16 w-36 sm:w-48 flex items-center justify-start shrink-0">
+            <!-- Exact High-Resolution Logo Vector matching user's uploaded image -->
+            <div id="storeLogoDefaultIcon" class="w-full h-full flex items-center">
+              <svg viewBox="0 0 320 220" class="w-full h-full drop-shadow-md select-none overflow-visible" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <!-- Text curve path for KHANDELWAL -->
+                  <path id="archTextPath" d="M 75 88 Q 160 62 245 82" />
+                  
+                  <linearGradient id="goldTextGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#FFDD55" />
+                    <stop offset="50%" stop-color="#F5A823" />
+                    <stop offset="100%" stop-color="#E28612" />
+                  </linearGradient>
+
+                  <linearGradient id="redCarGrad" x1="0%" y1="0%" x2="100%" y2="50%">
+                    <stop offset="0%" stop-color="#EF4444" />
+                    <stop offset="60%" stop-color="#DC2626" />
+                    <stop offset="100%" stop-color="#991B1B" />
+                  </linearGradient>
+
+                  <linearGradient id="giftBoxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#F43F5E" />
+                    <stop offset="100%" stop-color="#9F1239" />
+                  </linearGradient>
+
+                  <filter id="badgeShadow" x="-10%" y="-10%" width="130%" height="130%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#26160d" flood-opacity="0.25"/>
+                  </filter>
+                </defs>
+
+                <!-- Sticker contour back-plate matching the 3D sticker style -->
+                <path d="M 50 80 Q 90 20 160 15 Q 230 18 280 65 Q 310 110 270 170 Q 240 195 160 195 Q 60 195 40 150 Z" 
+                      fill="#EED9C4" opacity="0.65" />
+
+                <!-- 1. Top Toy Characters Group -->
+                <g id="topCharactersGroup">
+                  <!-- Yellow school bus (Far Left) -->
+                  <g transform="translate(38, 55)">
+                    <rect x="0" y="5" width="34" height="20" rx="4" fill="#FBBF24" stroke="#78350F" stroke-width="2"/>
+                    <rect x="3" y="8" width="8" height="7" rx="1" fill="#93C5FD"/>
+                    <rect x="14" y="8" width="8" height="7" rx="1" fill="#93C5FD"/>
+                    <circle cx="8" cy="25" r="4.5" fill="#1F2937"/>
+                    <circle cx="26" cy="25" r="4.5" fill="#1F2937"/>
+                    <circle cx="8" cy="25" r="1.5" fill="#E5E7EB"/>
+                    <circle cx="26" cy="25" r="1.5" fill="#E5E7EB"/>
+                  </g>
+
+                  <!-- Doll with red/brown hair -->
+                  <g transform="translate(70, 32)">
+                    <circle cx="14" cy="14" r="11" fill="#FED7AA"/>
+                    <path d="M 3 14 Q 14 0 25 14 Q 22 2 6 2 Z" fill="#9A3412"/>
+                    <circle cx="10" cy="13" r="1.5" fill="#1F2937"/>
+                    <circle cx="18" cy="13" r="1.5" fill="#1F2937"/>
+                    <path d="M 6 25 Q 14 20 22 25 L 20 38 L 8 38 Z" fill="#DC2626"/>
+                  </g>
+
+                  <!-- Cute Bear in Blue/Orange Cap -->
+                  <g transform="translate(98, 38)">
+                    <circle cx="12" cy="12" r="10" fill="#FDBA74"/>
+                    <circle cx="9" cy="11" r="1.2" fill="#1F2937"/>
+                    <circle cx="15" cy="11" r="1.2" fill="#1F2937"/>
+                    <path d="M 4 8 Q 12 0 20 8 Z" fill="#0284C7"/>
+                    <circle cx="12" cy="1" r="2.5" fill="#EA580C"/>
+                    <rect x="5" y="21" width="14" height="12" rx="4" fill="#0284C7"/>
+                  </g>
+
+                  <!-- Central Girl Character (Pink superhero outfit) -->
+                  <g transform="translate(122, 22)">
+                    <circle cx="14" cy="12" r="10" fill="#FED7AA"/>
+                    <path d="M 3 11 Q 14 2 25 11 Q 23 0 5 0 Z" fill="#1E1B4B"/>
+                    <circle cx="10" cy="11" r="1.5" fill="#1E1B4B"/>
+                    <circle cx="18" cy="11" r="1.5" fill="#1E1B4B"/>
+                    <path d="M 12 16 Q 14 18 16 16" stroke="#E11D48" stroke-width="1.2" fill="none"/>
+                    <!-- Pink dress -->
+                    <path d="M 6 22 L 22 22 L 20 38 L 8 38 Z" fill="#EC4899"/>
+                    <circle cx="14" cy="27" r="2.5" fill="#FDE047"/>
+                  </g>
+
+                  <!-- Masked Hero / Robot -->
+                  <g transform="translate(148, 32)">
+                    <rect x="4" y="4" width="20" height="18" rx="6" fill="#475569"/>
+                    <circle cx="9" cy="11" r="2" fill="#38BDF8"/>
+                    <circle cx="19" cy="11" r="2" fill="#38BDF8"/>
+                    <rect x="5" y="22" width="18" height="14" rx="4" fill="#0F172A"/>
+                  </g>
+
+                  <!-- Blue Action Hero -->
+                  <g transform="translate(174, 30)">
+                    <circle cx="12" cy="10" r="8" fill="#FBCFE8"/>
+                    <path d="M 4 8 L 20 8 L 18 2 L 6 2 Z" fill="#1D4ED8"/>
+                    <rect x="5" y="18" width="14" height="18" rx="3" fill="#1E40AF"/>
+                  </g>
+
+                  <!-- Golem / Stone Mech Figure -->
+                  <g transform="translate(198, 16)">
+                    <polygon points="15,4 28,14 24,36 6,36 2,14" fill="#64748B" stroke="#334155" stroke-width="1.5"/>
+                    <circle cx="11" cy="18" r="2" fill="#F87171"/>
+                    <circle cx="19" cy="18" r="2" fill="#F87171"/>
+                  </g>
+
+                  <!-- Cute Baby/Duck in Pink Hood -->
+                  <g transform="translate(228, 35)">
+                    <circle cx="14" cy="14" r="12" fill="#F472B6"/>
+                    <circle cx="14" cy="14" r="8" fill="#FDE047"/>
+                    <circle cx="12" cy="13" r="1.2" fill="#1E293B"/>
+                    <circle cx="17" cy="13" r="1.2" fill="#1E293B"/>
+                    <polygon points="12,16 17,16 14.5,19" fill="#EA580C"/>
+                  </g>
+                </g>
+
+                <!-- 2. Dark Chocolate Ribbon for KHANDELWAL -->
+                <path d="M 68 96 Q 160 62 252 88 L 246 64 Q 160 42 74 72 Z" 
+                      fill="#26160D" stroke="#1A0D07" stroke-width="2" />
+                
+                <text font-family="'Outfit', sans-serif" font-weight="900" font-size="14.5" fill="#FFFFFF" letter-spacing="2">
+                  <textPath href="#archTextPath" startOffset="50%" text-anchor="middle">KHANDELWAL</textPath>
+                </text>
+
+                <!-- 3. Giant 3D "Gifts" Typography -->
+                <g id="giftsWord" filter="url(#badgeShadow)">
+                  <!-- 3D Extrusion Shadow -->
+                  <text x="56" y="148" font-family="'Outfit', sans-serif" font-weight="900" font-size="78" fill="#24140B" stroke="#24140B" stroke-width="12" stroke-linejoin="round">Gifts</text>
+                  <text x="54" y="144" font-family="'Outfit', sans-serif" font-weight="900" font-size="78" fill="#2E1B10" stroke="#2E1B10" stroke-width="8" stroke-linejoin="round">Gifts</text>
+                  <!-- Golden Face -->
+                  <text x="52" y="140" font-family="'Outfit', sans-serif" font-weight="900" font-size="78" fill="url(#goldTextGrad)" stroke="#4A2810" stroke-width="4" stroke-linejoin="round">Gifts</text>
+                  <!-- Dot of 'i' in warm orange/amber highlight -->
+                  <circle cx="99" cy="85" r="7.5" fill="#EA580C" stroke="#2E1B10" stroke-width="2.5"/>
+                  <circle cx="97" cy="83" r="2.5" fill="#FED7AA"/>
+                </g>
+
+                <!-- 4. "centre" Typography in Cream & Dark Contour -->
+                <g id="centreWord">
+                  <text x="175" y="172" font-family="'Outfit', sans-serif" font-weight="900" font-size="42" fill="#24140B" stroke="#24140B" stroke-width="9" stroke-linejoin="round" text-anchor="middle">centre</text>
+                  <text x="175" y="170" font-family="'Outfit', sans-serif" font-weight="900" font-size="42" fill="#FFFDF5" stroke="#3D2114" stroke-width="3" stroke-linejoin="round" text-anchor="middle">centre</text>
+                </g>
+
+                <!-- 5. "TOY SHOP" Dark Pill Banner -->
+                <g id="toyShopBadge" transform="translate(125, 178)">
+                  <rect x="0" y="0" width="102" height="22" rx="11" fill="#26160D" stroke="#EED9C4" stroke-width="1.5" />
+                  <text x="51" y="15" font-family="'Outfit', sans-serif" font-weight="900" font-size="10.5" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">TOY SHOP</text>
+                </g>
+
+                <!-- 6. Red Gift Box with Golden Bow (Right Side) -->
+                <g id="redGiftBox" transform="translate(238, 138) scale(0.95)">
+                  <!-- Gift Cube -->
+                  <rect x="6" y="16" width="34" height="34" rx="4" fill="url(#giftBoxGrad)" stroke="#7F1D1D" stroke-width="1.5"/>
+                  <!-- Yellow Ribbon Horizontal & Vertical -->
+                  <rect x="6" y="29" width="34" height="8" fill="#FBBF24"/>
+                  <rect x="19" y="16" width="8" height="34" fill="#FBBF24"/>
+                  <!-- Box Lid -->
+                  <rect x="4" y="12" width="38" height="7" rx="2" fill="#E11D48"/>
+                  <rect x="19" y="12" width="8" height="7" fill="#FBBF24"/>
+                  <!-- Golden Bow Loops -->
+                  <ellipse cx="17" cy="8" rx="7" ry="5" fill="#FBBF24" stroke="#B45309" stroke-width="1" transform="rotate(-20 17 8)"/>
+                  <ellipse cx="29" cy="8" rx="7" ry="5" fill="#FBBF24" stroke="#B45309" stroke-width="1" transform="rotate(20 29 8)"/>
+                  <circle cx="23" cy="9" r="3" fill="#D97706"/>
+                </g>
+
+                <!-- 7. Red Sports Car in Front (Bottom Left) -->
+                <g id="redSportsCar" transform="translate(50, 162)">
+                  <!-- Car Body Shadow -->
+                  <ellipse cx="38" cy="38" rx="36" ry="6" fill="#1C1917" opacity="0.4"/>
+                  
+                  <!-- Main Sleek Body -->
+                  <path d="M 5 28 Q 12 21 22 21 L 44 20 Q 56 20 62 25 L 72 27 Q 76 29 76 34 L 5 34 Z" fill="url(#redCarGrad)" stroke="#7F1D1D" stroke-width="1"/>
+                  
+                  <!-- Roof & Cockpit -->
+                  <path d="M 22 21 Q 30 11 44 11 L 52 14 Q 57 16 62 22 Z" fill="#1E293B"/>
+                  <path d="M 26 20 Q 32 13 42 13 L 48 14 Q 52 16 56 20 Z" fill="#93C5FD" opacity="0.85"/>
+                  
+                  <!-- Rear Spoiler -->
+                  <path d="M 4 23 L 10 23 L 8 28 L 5 28 Z" fill="#18181B"/>
+                  
+                  <!-- Headlight glow -->
+                  <polygon points="71,28 75,30 71,32" fill="#FEF08A"/>
+                  
+                  <!-- Wheels (Tires & Rims) -->
+                  <g transform="translate(18, 27)">
+                    <circle cx="7" cy="7" r="7.5" fill="#18181B"/>
+                    <circle cx="7" cy="7" r="4.5" fill="#64748B"/>
+                    <circle cx="7" cy="7" r="2" fill="#E2E8F0"/>
+                  </g>
+                  
+                  <g transform="translate(54, 27)">
+                    <circle cx="7" cy="7" r="7.5" fill="#18181B"/>
+                    <circle cx="7" cy="7" r="4.5" fill="#64748B"/>
+                    <circle cx="7" cy="2" fill="#E2E8F0"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Image loaded from Google Drive or URL if uploaded in Admin -->
+            <img id="storeLogoImg" src="" alt="Khandelwal Gifts Centre Logo" class="h-full w-auto object-contain hidden rounded-xl">
+          </div>
+
+          <!-- Brand Title Text next to Logo -->
+          <div class="flex flex-col justify-center select-none border-l border-slate-200 pl-2 sm:pl-3">
+            <span class="text-base sm:text-2xl font-black tracking-tight text-slate-900 leading-none flex items-center gap-1.5">
+              <span>The Gift Tree</span>
+              <span class="text-amber-500 text-xs sm:text-sm">✨</span>
+            </span>
+            <span class="text-[10px] sm:text-xs font-bold text-fuchsia-600 tracking-wider uppercase mt-0.5">
+              Toys & Family Gifts
+            </span>
+          </div>
+        </div>
+
+        <!-- Right Action Icons: Cart & Admin -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- WhatsApp Connect Button -->
+          <a id="navWhatsappBtn" href="#" target="_blank" class="hidden sm:flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded-xl border border-emerald-200 transition">
+            <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i>
+            <span>Need Help?</span>
+          </a>
+
+          <!-- Cart Button -->
+          <button onclick="toggleCartModal(true)" class="relative p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 transition" aria-label="View Cart">
+            <i class="fa-solid fa-basket-shopping text-xl"></i>
+            <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-fuchsia-600 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shadow hidden">0</span>
+          </button>
+
+          <!-- Admin Portal Access -->
+          <button onclick="openAdminAuthModal()" class="p-2.5 rounded-xl text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition" title="Admin Login">
+            <i class="fa-solid fa-user-shield text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-gradient-to-b from-fuchsia-50 via-white to-slate-50 border-b border-slate-200/80 py-8 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold bg-fuchsia-100 text-fuchsia-800 mb-3">
+        <i class="fa-solid fa-sparkles text-amber-500"></i> Finding The Perfect Gift Made Easy
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+        Curated Toys & Special Gifts
+      </h2>
+      <p class="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+        Find gifts matching exact age, gender and interests. Try our smart AI Gift Finder!
+      </p>
+
+      <!-- Search & Filters Container -->
+      <div class="mt-6 bg-white p-3 rounded-2xl shadow-xl shadow-slate-200/60 border border-slate-200 flex flex-col md:flex-row gap-3 items-stretch">
+        <div class="relative flex-1">
+          <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+          <input type="text" id="searchInput" oninput="handleSearch()" placeholder="Search toys, gifts, puzzles, dolls..." class="w-full pl-11 pr-4 py-3 bg-slate-50 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-fuchsia-500 border border-transparent focus:bg-white transition">
+        </div>
+
+        <button onclick="openAiBotModal()" class="flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-fuchsia-600 via-indigo-600 to-indigo-700 text-white font-bold rounded-xl text-sm shadow-md hover:shadow-lg transition">
+          <i class="fa-solid fa-robot text-amber-300"></i>
+          <span>Ask AI (Age & Boy/Girl)</span>
+        </button>
+      </div>
+
+      <!-- Quick filters: Gender and Age presets -->
+      <div class="mt-4 flex flex-wrap items-center justify-center gap-2">
+        <span class="text-xs font-semibold text-slate-500 mr-1">Quick Filters:</span>
+        <button onclick="setFilter('trending', 'all')" id="filterTrendingBtn" class="px-3 py-1 text-xs rounded-full border border-amber-300 bg-amber-50 text-amber-800 font-bold hover:bg-amber-100 flex items-center gap-1 shadow-sm">
+          <span>🔥</span> <span>Trending Gifts</span>
+        </button>
+        <button onclick="setFilter('gender', 'all')" class="gender-btn active px-3 py-1 text-xs rounded-full border border-slate-200 bg-white font-medium hover:bg-slate-100">All</button>
+        <button onclick="setFilter('gender', 'boy')" class="gender-btn px-3 py-1 text-xs rounded-full border border-blue-200 bg-blue-50 text-blue-700 font-medium hover:bg-blue-100">👦 Boys</button>
+        <button onclick="setFilter('gender', 'girl')" class="gender-btn px-3 py-1 text-xs rounded-full border border-pink-200 bg-pink-50 text-pink-700 font-medium hover:bg-pink-100">👧 Girls</button>
+        <button onclick="setFilter('age', '0-3')" class="age-btn px-3 py-1 text-xs rounded-full border border-slate-200 bg-white font-medium hover:bg-slate-100">0-3 Years</button>
+        <button onclick="setFilter('age', '4-7')" class="age-btn px-3 py-1 text-xs rounded-full border border-slate-200 bg-white font-medium hover:bg-slate-100">4-7 Years</button>
+        <button onclick="setFilter('age', '8-12')" class="age-btn px-3 py-1 text-xs rounded-full border border-slate-200 bg-white font-medium hover:bg-slate-100">8-12+ Years</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    
+    <!-- Category Tabs Filter -->
+    <div class="flex items-center justify-between mb-6 pb-2 overflow-x-auto hide-scrollbar gap-2" id="categoryTabsContainer">
+      <!-- Injected dynamically via JS -->
+    </div>
+
+    <!-- Active Filters Badge row -->
+    <div id="activeFiltersRow" class="hidden items-center gap-2 mb-4 text-xs text-slate-600">
+      <span>Active Filters:</span>
+      <div id="filterPills" class="flex flex-wrap gap-2"></div>
+      <button onclick="clearAllFilters()" class="text-fuchsia-600 font-bold hover:underline ml-2">Clear All</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="productGrid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+      <!-- Injected dynamically via JS -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyCatalogState" class="hidden text-center py-16">
+      <div class="w-20 h-20 mx-auto bg-slate-100 rounded-full flex items-center justify-center text-slate-400 text-3xl mb-4">
+        <i class="fa-solid fa-box-open"></i>
+      </div>
+      <h3 class="text-lg font-bold text-slate-800">No Products Found</h3>
+      <p class="text-sm text-slate-500 mt-1 max-w-sm mx-auto">Try searching for something else or use our AI Gift Finder.</p>
+      <button onclick="clearAllFilters()" class="mt-4 px-4 py-2 bg-fuchsia-600 text-white rounded-xl text-sm font-semibold hover:bg-fuchsia-700">View All Products</button>
+    </div>
+  </main>
+
+  <div id="aiBotModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+      <!-- Modal Header -->
+      <div class="bg-gradient-to-r from-fuchsia-600 via-indigo-600 to-purple-700 px-6 py-4 text-white flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center text-amber-300 text-xl">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div>
+            <h3 class="font-extrabold text-lg leading-tight">AI Smart Gift Bot</h3>
+            <p class="text-xs text-fuchsia-100">Find the best gifts tailored by age and gender</p>
+          </div>
+        </div>
+        <button onclick="closeAiBotModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Form & AI Results) -->
+      <div class="p-6 overflow-y-auto space-y-5 hide-scrollbar">
+        <!-- Input Form -->
+        <div id="aiFormSection" class="space-y-4">
+          <!-- Gender Select -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">1. Who is the gift for? (Gender)</label>
+            <div class="grid grid-cols-3 gap-2">
+              <label class="relative flex items-center justify-center p-3 border-2 border-slate-200 rounded-2xl cursor-pointer hover:border-blue-400 has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50 transition">
+                <input type="radio" name="aiGender" value="boy" class="sr-only" checked>
+                <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-child text-blue-600"></i> Boy</span>
+              </label>
+              <label class="relative flex items-center justify-center p-3 border-2 border-slate-200 rounded-2xl cursor-pointer hover:border-pink-400 has-[:checked]:border-pink-600 has-[:checked]:bg-pink-50 transition">
+                <input type="radio" name="aiGender" value="girl" class="sr-only">
+                <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-child-dress text-pink-600"></i> Girl</span>
+              </label>
+              <label class="relative flex items-center justify-center p-3 border-2 border-slate-200 rounded-2xl cursor-pointer hover:border-purple-400 has-[:checked]:border-purple-600 has-[:checked]:bg-purple-50 transition">
+                <input type="radio" name="aiGender" value="any" class="sr-only">
+                <span class="text-xs font-bold text-slate-800 flex items-center gap-1.5"><i class="fa-solid fa-gift text-purple-600"></i> Any / Unisex</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Age Input -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">2. Child's Age (Years)</label>
+            <div class="flex items-center gap-3">
+              <input type="number" id="aiAgeInput" min="0" max="18" value="6" class="w-24 px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-center font-black text-lg focus:ring-2 focus:ring-fuchsia-500 focus:bg-white focus:outline-none">
+              <span class="text-sm font-semibold text-slate-600">Years old (e.g. 2, 5, 8, or 12)</span>
+            </div>
+          </div>
+
+          <!-- Budget & Occasion -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Budget (Max ₹)</label>
+              <select id="aiBudgetSelect" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-fuchsia-500 focus:outline-none">
+                <option value="any">Any Budget</option>
+                <option value="500">Under ₹500</option>
+                <option value="1000">Under ₹1,000</option>
+                <option value="2000">Under ₹2,000</option>
+                <option value="5000">Under ₹5,000</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Occasion</label>
+              <select id="aiOccasionSelect" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-fuchsia-500 focus:outline-none">
+                <option value="Birthday">Birthday</option>
+                <option value="Return Gift">Return Gift / Party Favor</option>
+                <option value="Festival">Festival / Holiday</option>
+                <option value="Educational">Learning / Educational</option>
+                <option value="General">General Surprise Gift</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button onclick="runAiGiftFinder()" class="w-full py-3.5 bg-gradient-to-r from-fuchsia-600 to-indigo-600 hover:from-fuchsia-700 hover:to-indigo-700 text-white font-extrabold rounded-2xl shadow-lg transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-wand-magic-sparkles text-amber-300"></i>
+            <span>Find Best Matching Gifts</span>
+          </button>
+        </div>
+
+        <!-- AI Loading State -->
+        <div id="aiLoadingSection" class="hidden text-center py-8">
+          <div class="inline-block p-4 bg-fuchsia-50 rounded-2xl text-fuchsia-600 mb-3 animate-bounce">
+            <i class="fa-solid fa-brain text-3xl"></i>
+          </div>
+          <p class="font-bold text-slate-800 text-base">Analyzing store inventory...</p>
+          <p class="text-xs text-slate-500 mt-1">Selecting the top gifts matching this age and preference</p>
+        </div>
+
+        <!-- AI Result Box -->
+        <div id="aiResultSection" class="hidden space-y-4">
+          <div class="p-4 bg-indigo-50 border border-indigo-100 rounded-2xl">
+            <div class="flex items-center gap-2 text-indigo-800 font-bold text-sm mb-1">
+              <i class="fa-solid fa-robot"></i>
+              <span>AI Recommendation:</span>
+            </div>
+            <p id="aiAdviceText" class="text-xs sm:text-sm text-indigo-900 leading-relaxed"></p>
+          </div>
+
+          <!-- Recommended Items List -->
+          <div>
+            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Suggested Products:</h4>
+            <div id="aiSuggestedProductsList" class="space-y-2.5">
+              <!-- Injected by JS -->
+            </div>
+          </div>
+
+          <button onclick="resetAiSearch()" class="w-full py-2.5 bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-bold rounded-xl transition">
+            <i class="fa-solid fa-arrow-rotate-left mr-1"></i> Search for Another Age / Budget
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cartModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex justify-end">
+    <div class="bg-white w-full max-w-md h-full flex flex-col shadow-2xl">
+      <!-- Cart Header -->
+      <div class="p-4 sm:p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-basket-shopping text-fuchsia-600 text-lg"></i>
+          <h3 class="font-bold text-slate-900 text-lg">Shopping Cart</h3>
+        </div>
+        <button onclick="toggleCartModal(false)" class="p-2 text-slate-400 hover:text-slate-700 rounded-lg">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Cart Items List -->
+      <div id="cartItemsList" class="flex-1 overflow-y-auto p-4 space-y-3">
+        <!-- Populated via JS -->
+      </div>
+
+      <!-- Cart Empty -->
+      <div id="cartEmptyState" class="hidden flex-1 flex flex-col items-center justify-center p-6 text-center">
+        <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center text-slate-300 text-2xl mb-3">
+          <i class="fa-solid fa-cart-arrow-down"></i>
+        </div>
+        <p class="font-bold text-slate-700">Your Cart is Empty</p>
+        <p class="text-xs text-slate-400 mt-1">Browse items and add gifts to your cart</p>
+      </div>
+
+      <!-- Cart Footer / Order Form -->
+      <div id="cartFooter" class="p-4 sm:p-5 border-t border-slate-200 bg-slate-50 space-y-3">
+        <div class="flex justify-between items-center text-sm font-semibold text-slate-600">
+          <span>Subtotal:</span>
+          <span id="cartSubtotal" class="text-lg font-black text-slate-900">₹0</span>
+        </div>
+
+        <div class="space-y-2">
+          <input type="text" id="custName" placeholder="Your Full Name *" class="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl bg-white focus:outline-none focus:ring-1 focus:ring-fuchsia-500" required>
+          <input type="tel" id="custPhone" placeholder="Mobile / WhatsApp Number *" class="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl bg-white focus:outline-none focus:ring-1 focus:ring-fuchsia-500" required>
+          <textarea id="custAddress" rows="2" placeholder="Delivery Address with Landmark & City *" class="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl bg-white focus:outline-none focus:ring-1 focus:ring-fuchsia-500" required></textarea>
+        </div>
+
+        <!-- WhatsApp Checkout Button -->
+        <button onclick="checkoutViaWhatsApp()" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-2xl shadow-lg transition flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-xl"></i>
+          <span>Send Order via WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Details Quickview Modal (Multi-Images & Video) -->
+  <div id="productDetailModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl flex flex-col hide-scrollbar">
+      <div class="p-4 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur z-10">
+        <div class="flex items-center gap-2">
+          <span id="modalCategoryTag" class="text-xs font-bold uppercase tracking-wider text-fuchsia-600 px-2.5 py-1 bg-fuchsia-50 rounded-lg">Category</span>
+          <span id="modalTrendingBadge" class="hidden text-xs font-black bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">🔥 Trending</span>
+        </div>
+        <button onclick="closeProductDetailModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="p-4 sm:p-6 space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+          <!-- Media Showcase (Main Image/Video + Thumbnails) -->
+          <div class="space-y-3">
+            <div id="mainMediaViewer" class="relative aspect-square w-full bg-slate-100 rounded-2xl overflow-hidden border border-slate-200">
+              <img id="modalMainImg" src="" alt="Product View" class="w-full h-full object-cover">
+              <div id="modalVideoPlayer" class="w-full h-full hidden bg-black flex items-center justify-center"></div>
+            </div>
+
+            <!-- Thumbnails strip -->
+            <div id="modalThumbnailsRow" class="flex gap-2 overflow-x-auto hide-scrollbar pb-1">
+              <!-- Thumbnails injected via JS -->
+            </div>
+          </div>
+
+          <!-- Product Info & Actions -->
+          <div class="flex flex-col justify-between space-y-4">
+            <div>
+              <h2 id="modalTitle" class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">Product Name</h2>
+              
+              <div class="flex items-baseline gap-2 mt-2">
+                <span id="modalPrice" class="text-2xl font-black text-fuchsia-600">₹0</span>
+                <span id="modalOriginalPrice" class="text-sm text-slate-400 line-through"></span>
+                <span id="modalDiscountTag" class="text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full"></span>
+              </div>
+
+              <!-- Tags for Age & Gender & Stock -->
+              <div class="flex flex-wrap gap-2 mt-4 text-xs font-bold">
+                <span id="modalAgeBadge" class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-xl">3-8 Yrs</span>
+                <span id="modalGenderBadge" class="px-2.5 py-1 bg-blue-50 text-blue-700 rounded-xl">👦 Boy</span>
+                <span id="modalStockBadge" class="px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-xl">In Stock</span>
+              </div>
+
+              <div class="mt-4 pt-4 border-t border-slate-100">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Description & Details</h4>
+                <p id="modalDesc" class="text-xs sm:text-sm text-slate-600 leading-relaxed whitespace-pre-line"></p>
+              </div>
+            </div>
+
+            <!-- Action buttons in modal -->
+            <div class="pt-4 flex flex-col sm:flex-row gap-2">
+              <button id="modalAddToCartBtn" class="flex-1 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-2xl text-xs sm:text-sm font-bold transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+              </button>
+              <button id="modalBuyNowBtn" class="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl text-xs sm:text-sm font-extrabold shadow-md transition flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Buy on WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="adminModal" class="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm hidden overflow-y-auto p-4 sm:p-6 flex items-center justify-center">
+    <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+      <!-- Admin Header -->
+      <div class="bg-slate-900 px-6 py-4 text-white flex items-center justify-between border-b border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white">
+            <i class="fa-solid fa-lock text-lg"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg leading-tight">The Gift Tree - Admin Dashboard</h3>
+            <span class="text-xs text-slate-400">Manage items, photos, videos, categories & store settings</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="logoutAdmin()" class="px-3 py-1.5 text-xs font-semibold bg-rose-600/20 text-rose-300 hover:bg-rose-600 hover:text-white rounded-lg transition">
+            Logout
+          </button>
+          <button onclick="closeAdminModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Admin Tabs Navigation -->
+      <div class="flex border-b border-slate-200 bg-slate-50 px-6 pt-3 gap-3 overflow-x-auto hide-scrollbar text-xs sm:text-sm font-semibold">
+        <button onclick="switchAdminTab('products')" id="adminTabBtnProducts" class="pb-3 border-b-2 border-indigo-600 text-indigo-600 flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-box"></i> Products & Stock
+        </button>
+        <button onclick="switchAdminTab('add')" id="adminTabBtnAdd" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-plus-circle"></i> Add / Edit Item
+        </button>
+        <button onclick="switchAdminTab('categories')" id="adminTabBtnCategories" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-tags"></i> Manage Categories
+        </button>
+        <button onclick="switchAdminTab('settings')" id="adminTabBtnSettings" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 whitespace-nowrap">
+          <i class="fa-solid fa-gear"></i> Logo & Settings
+        </button>
+      </div>
+
+      <!-- Admin Tab 1: Products Management -->
+      <div id="adminTabProducts" class="flex-1 overflow-y-auto p-6 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-slate-500">Total Products:</span>
+            <span id="adminTotalItemsBadge" class="px-2.5 py-0.5 bg-indigo-100 text-indigo-800 font-extrabold rounded-full text-xs">0</span>
+          </div>
+          <button onclick="switchAdminTab('add')" class="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl flex items-center gap-1.5 w-max">
+            <i class="fa-solid fa-plus"></i> Add New Product
+          </button>
+        </div>
+
+        <div class="overflow-x-auto border border-slate-200 rounded-2xl">
+          <table class="w-full text-left text-xs text-slate-600">
+            <thead class="bg-slate-50 text-slate-700 uppercase font-bold border-b border-slate-200">
+              <tr>
+                <th class="p-3">Photo</th>
+                <th class="p-3">Name / Category</th>
+                <th class="p-3">Price</th>
+                <th class="p-3">Trending</th>
+                <th class="p-3">Stock Status</th>
+                <th class="p-3 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="adminProductsTableBody" class="divide-y divide-slate-100">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Admin Tab 2: Add / Edit Product Form -->
+      <div id="adminTabAdd" class="flex-1 overflow-y-auto p-6 hidden">
+        <form id="productForm" onsubmit="handleProductFormSubmit(event)" class="space-y-4 max-w-2xl mx-auto">
+          <input type="hidden" id="editProductId" value="">
+
+          <div class="flex items-center justify-between border-b pb-2">
+            <h4 id="formHeaderTitle" class="text-base font-extrabold text-slate-800">Add New Product</h4>
+            <!-- Trending Checkbox Toggle -->
+            <label class="inline-flex items-center gap-2 cursor-pointer bg-amber-50 px-3 py-1.5 rounded-xl border border-amber-200">
+              <input type="checkbox" id="pIsTrending" class="w-4 h-4 text-amber-500 rounded focus:ring-amber-400">
+              <span class="text-xs font-bold text-amber-900">🔥 Mark as Trending Item</span>
+            </label>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Product Name *</label>
+              <input type="text" id="pName" required placeholder="e.g. Remote Control Stunt Car" class="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:ring-1 focus:ring-indigo-500">
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Category *</label>
+              <select id="pCategory" required class="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl bg-white focus:ring-1 focus:ring-indigo-500">
+                <!-- Injected via renderAdminCategoryOptions() -->
+              </select>
+            </div>
+          </div>
+
+          <!-- Pricing & Stock -->
+          <div class="grid grid-cols-3 gap-3">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Selling Price (₹) *</label>
+              <input type="number" id="pPrice" required min="1" placeholder="499" class="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:ring-1 focus:ring-indigo-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">MRP / Old Price (₹)</label>
+              <input type="number" id="pOriginalPrice" placeholder="799" class="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:ring-1 focus:ring-indigo-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Stock Status</label>
+              <select id="pStock" class="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl bg-white focus:ring-1 focus:ring-indigo-500">
+                <option value="in_stock">In Stock</option>
+                <option value="low_stock">Low Stock</option>
+                <option value="out_of_stock">Out of Stock</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Age & Gender for AI Matching -->
+          <div class="grid grid-cols-2 gap-3 bg-fuchsia-50/60 p-3 rounded-2xl border border-fuchsia-100">
+            <div>
+              <label class="block text-xs font-bold text-fuchsia-900 mb-1">Target Age Range (Years)</label>
+              <div class="flex items-center gap-2">
+                <input type="number" id="pMinAge" placeholder="Min" class="w-full px-3 py-2 text-xs border border-fuchsia-200 rounded-xl bg-white" min="0" max="18" value="3">
+                <span class="text-xs text-fuchsia-700">to</span>
+                <input type="number" id="pMaxAge" placeholder="Max" class="w-full px-3 py-2 text-xs border border-fuchsia-200 rounded-xl bg-white" min="0" max="18" value="8">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-fuchsia-900 mb-1">Gender Target</label>
+              <select id="pGender" class="w-full px-3 py-2 text-xs border border-fuchsia-200 rounded-xl bg-white">
+                <option value="unisex">Unisex (Both Boys & Girls)</option>
+                <option value="boy">Boys Only</option>
+                <option value="girl">Girls Only</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Multiple Product Photos (Up to 4) Google Drive Links -->
+          <div class="bg-indigo-50/70 p-4 rounded-2xl border border-indigo-100 space-y-3">
+            <div class="flex items-center justify-between">
+              <label class="block text-xs font-bold text-indigo-900">
+                <i class="fa-brands fa-google-drive text-indigo-600 mr-1"></i> Product Photos (Up to 4 Google Drive / Image URLs)
+              </label>
+              <span class="text-[10px] text-indigo-700 font-semibold bg-indigo-100 px-2 py-0.5 rounded-full">Supports Drive Links</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-600 mb-0.5">Photo 1 (Main/Cover Image) *</label>
+                <input type="text" id="pImageUrl1" required placeholder="Google Drive Share Link 1" class="w-full px-3 py-2 text-xs border border-indigo-200 rounded-xl bg-white">
+              </div>
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-600 mb-0.5">Photo 2 (Optional)</label>
+                <input type="text" id="pImageUrl2" placeholder="Google Drive Share Link 2" class="w-full px-3 py-2 text-xs border border-indigo-200 rounded-xl bg-white">
+              </div>
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-600 mb-0.5">Photo 3 (Optional)</label>
+                <input type="text" id="pImageUrl3" placeholder="Google Drive Share Link 3" class="w-full px-3 py-2 text-xs border border-indigo-200 rounded-xl bg-white">
+              </div>
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-600 mb-0.5">Photo 4 (Optional)</label>
+                <input type="text" id="pImageUrl4" placeholder="Google Drive Share Link 4" class="w-full px-3 py-2 text-xs border border-indigo-200 rounded-xl bg-white">
+              </div>
+            </div>
+
+            <!-- Video Link Support -->
+            <div class="pt-2 border-t border-indigo-200/60">
+              <label class="block text-xs font-bold text-indigo-900 mb-1">
+                <i class="fa-solid fa-video text-fuchsia-600 mr-1"></i> Product Demo Video (YouTube or Google Drive Share Link)
+              </label>
+              <input type="text" id="pVideoUrl" placeholder="e.g. https://www.youtube.com/watch?v=... or Google Drive video link" class="w-full px-3 py-2 text-xs border border-indigo-200 rounded-xl bg-white">
+              <span class="text-[10px] text-slate-500 block mt-0.5">Paste YouTube link or Google Drive public video link to show video on the product page.</span>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Product Description</label>
+            <textarea id="pDesc" rows="3" placeholder="Key highlights, material, package contents, battery requirements..." class="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:ring-1 focus:ring-indigo-500"></textarea>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="flex items-center justify-end gap-2 pt-2">
+            <button type="button" onclick="cancelProductEdit()" class="px-4 py-2 border border-slate-200 text-slate-600 rounded-xl text-xs font-bold hover:bg-slate-100">Cancel</button>
+            <button type="submit" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-extrabold shadow-md">Save Product</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Admin Tab 3: Categories Management -->
+      <div id="adminTabCategories" class="flex-1 overflow-y-auto p-6 hidden space-y-6">
+        <div class="bg-indigo-50/70 p-4 border border-indigo-100 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>
+            <h5 class="text-sm font-bold text-slate-800">Add New Category</h5>
+            <p class="text-xs text-slate-500">Categories organize products on your storefront navigation</p>
+          </div>
+          <div class="flex gap-2 w-full sm:w-auto">
+            <input type="text" id="newCategoryInput" placeholder="New Category Name (e.g. Magic Toys)" class="px-3 py-2 text-xs border border-slate-200 rounded-xl bg-white flex-1 sm:w-60 focus:ring-1 focus:ring-indigo-500">
+            <button onclick="addNewCategory()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl flex items-center gap-1 shadow-sm whitespace-nowrap">
+              <i class="fa-solid fa-plus"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <h5 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">Current Active Categories</h5>
+          <div id="adminCategoriesList" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <!-- Injected via renderAdminCategoriesManager() -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Admin Tab 4: Settings & Google Drive Backup & Embed Code -->
+      <div id="adminTabSettings" class="flex-1 overflow-y-auto p-6 hidden space-y-5">
+        <!-- Website Logo Setting -->
+        <div class="bg-white p-4 border border-slate-200 rounded-2xl space-y-3">
+          <h5 class="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+            <i class="fa-solid fa-image text-fuchsia-600"></i> Website Logo Photo (Google Drive / Image URL)
+          </h5>
+          <div class="flex gap-2">
+            <input type="text" id="adminLogoUrlInput" placeholder="Paste Google Drive share link or photo URL for store logo" class="flex-1 px-3 py-2 text-xs border border-slate-200 rounded-xl">
+            <button onclick="previewLogoUrl()" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl">Preview</button>
+            <button onclick="saveStoreSettings()" class="px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold">Save</button>
+          </div>
+          <div id="adminLogoPreviewRow" class="hidden items-center gap-3 p-2 bg-slate-50 rounded-xl border border-slate-100">
+            <img id="adminLogoPreviewImg" src="" class="w-12 h-12 object-contain rounded-xl bg-white border border-slate-200">
+            <span class="text-xs text-emerald-700 font-semibold">Logo preview ready! Remember to click Save.</span>
+          </div>
+        </div>
+
+        <!-- WhatsApp Phone Setting -->
+        <div class="bg-white p-4 border border-slate-200 rounded-2xl space-y-3">
+          <h5 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Store WhatsApp Number (To Receive Orders)</h5>
+          <div class="flex gap-2 max-w-sm">
+            <input type="text" id="adminWhatsappInput" placeholder="e.g. 919876543210" class="flex-1 px-3 py-2 text-xs border border-slate-200 rounded-xl">
+            <button onclick="saveStoreSettings()" class="px-4 py-2 bg-emerald-600 text-white rounded-xl text-xs font-bold">Save</button>
+          </div>
+          <p class="text-[11px] text-slate-500">Include country code without + sign (e.g. 91 for India).</p>
+        </div>
+
+        <!-- Google Sites Embed Instructions -->
+        <div class="bg-indigo-50/70 p-4 border border-indigo-100 rounded-2xl space-y-2">
+          <h5 class="text-xs font-bold text-indigo-900 uppercase tracking-wider flex items-center gap-1.5">
+            <i class="fa-solid fa-code"></i> How to Host 100% Free on Google Sites?
+          </h5>
+          <ol class="text-xs text-indigo-900/90 list-decimal list-inside space-y-1 leading-relaxed">
+            <li>Open Google Sites (<a href="https://sites.google.com" target="_blank" class="underline font-bold">sites.google.com</a>) and create a new blank site.</li>
+            <li>On the right sidebar, click <strong>'Embed' (&lt; &gt;)</strong>.</li>
+            <li>Choose <strong>'Embed Code'</strong>, paste this entire HTML file code, and click <strong>Next &gt; Insert</strong>.</li>
+            <li>Drag the embedded box handles to stretch it full-width, and hit <strong>Publish</strong>. Your store is live for free!</li>
+          </ol>
+        </div>
+
+        <!-- Backup & Restore Data to Google Drive as JSON -->
+        <div class="bg-slate-50 p-4 border border-slate-200 rounded-2xl space-y-3">
+          <h5 class="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+            <i class="fa-solid fa-cloud-arrow-down"></i> Data Backup & Google Drive Storage
+          </h5>
+          <p class="text-xs text-slate-600">
+            Download your store catalog file (JSON) anytime to save a safe backup directly inside your Google Drive.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="exportCatalogData()" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl flex items-center gap-1.5">
+              <i class="fa-solid fa-download"></i> Download Backup File
+            </button>
+            <label class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold rounded-xl cursor-pointer flex items-center gap-1.5">
+              <i class="fa-solid fa-upload"></i> Restore from Backup
+              <input type="file" id="importJsonInput" accept=".json" class="sr-only" onchange="importCatalogData(event)">
+            </label>
+            <button onclick="resetDefaultProducts()" class="px-4 py-2 border border-rose-300 text-rose-600 hover:bg-rose-50 text-xs font-bold rounded-xl">
+              Load Sample Products
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="adminAuthModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl space-y-4">
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 mx-auto flex items-center justify-center text-xl mb-2">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3 class="font-extrabold text-slate-900 text-lg">Admin Login</h3>
+        <p class="text-xs text-slate-500">Enter your store administrator passcode</p>
+      </div>
+
+      <!-- Form container with autocomplete disabled and masked field to completely prevent browser "Suggest Strong Password" popup -->
+      <form onsubmit="event.preventDefault(); verifyAdminPassword();" autocomplete="off" class="space-y-3">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Enter Passcode:</label>
+          <input 
+            type="text" 
+            id="adminPasswordInput" 
+            autocomplete="off" 
+            autocorrect="off" 
+            autocapitalize="off" 
+            spellcheck="false" 
+            data-form-type="other"
+            placeholder="Enter passcode" 
+            class="masked-password-field w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 font-mono tracking-widest"
+          >
+        </div>
+
+        <div class="flex gap-2 pt-1">
+          <button type="button" onclick="closeAdminAuthModal()" class="w-1/2 py-2.5 border border-slate-200 text-slate-600 rounded-xl text-xs font-bold hover:bg-slate-100">Cancel</button>
+          <button type="submit" class="w-1/2 py-2.5 bg-indigo-600 text-white rounded-xl text-xs font-bold hover:bg-indigo-700">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toastNotification" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3 border border-slate-700 text-xs sm:text-sm font-semibold">
+      <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400"></i>
+      <span id="toastMessage">Message</span>
+    </div>
+  </div>
+
+  <script>
+    const STORAGE_KEY = 'thegifttree_products_catalog';
+    const SETTINGS_KEY = 'thegifttree_store_settings';
+    const CATEGORIES_KEY = 'thegifttree_categories';
+    const ADMIN_PASS_KEY = 'thegifttree_admin_pass';
+
+    const DEFAULT_CATEGORIES = [
+      'Toys & Games',
+      'Educational & Learning',
+      'Dolls & Soft Toys',
+      'Cars & Vehicles',
+      'Puzzles & Board Games',
+      'Birthday Gifts'
+    ];
+
+    // Default sample products updated with multi-images, trending status, and video
+    const DEFAULT_PRODUCTS = [
+      {
+        id: 'p1',
+        name: '360° Remote Control Stunt Car',
+        category: 'Cars & Vehicles',
+        price: 899,
+        originalPrice: 1499,
+        stock: 'in_stock',
+        isTrending: true,
+        minAge: 4,
+        maxAge: 12,
+        gender: 'boy',
+        imageUrl: 'https://images.unsplash.com/photo-1594787318286-3d835c1d207f?auto=format&fit=crop&w=600&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1594787318286-3d835c1d207f?auto=format&fit=crop&w=600&q=80',
+          'https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=600&q=80'
+        ],
+        videoUrl: '',
+        description: 'High-speed rechargeable 360-degree tumbling and flip stunt RC car with LED headlights. Perfect gift for boys.'
+      },
+      {
+        id: 'p2',
+        name: 'Talking Cactus Plush Toy (USB Rechargeable)',
+        category: 'Toys & Games',
+        price: 499,
+        originalPrice: 899,
+        stock: 'in_stock',
+        isTrending: true,
+        minAge: 1,
+        maxAge: 6,
+        gender: 'unisex',
+        imageUrl: 'https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=600&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1558060370-d644479cb6f7?auto=format&fit=crop&w=600&q=80'
+        ],
+        videoUrl: '',
+        description: 'Singing, dancing, and voice-repeating interactive plush toy. Keeps toddlers thoroughly entertained.'
+      },
+      {
+        id: 'p3',
+        name: 'Fashion Princess Beauty Doll Set with Accessories',
+        category: 'Dolls & Soft Toys',
+        price: 699,
+        originalPrice: 1199,
+        stock: 'in_stock',
+        isTrending: false,
+        minAge: 3,
+        maxAge: 10,
+        gender: 'girl',
+        imageUrl: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=600&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=600&q=80'
+        ],
+        videoUrl: '',
+        description: 'Complete fashion doll set with trendy outfits, hair styling accessories, and shoes. Top birthday present for girls.'
+      },
+      {
+        id: 'p4',
+        name: 'Solar System & Geography Wooden Puzzle',
+        category: 'Educational & Learning',
+        price: 399,
+        originalPrice: 650,
+        stock: 'in_stock',
+        isTrending: true,
+        minAge: 4,
+        maxAge: 12,
+        gender: 'unisex',
+        imageUrl: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=600&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=600&q=80'
+        ],
+        videoUrl: '',
+        description: 'Eco-friendly wooden jigsaw puzzle designed to stimulate cognitive curiosity, astronomy interest, and fine motor skills.'
+      },
+      {
+        id: 'p5',
+        name: 'Magic LCD Writing & Doodle Tablet (8.5 Inch)',
+        category: 'Educational & Learning',
+        price: 299,
+        originalPrice: 599,
+        stock: 'in_stock',
+        isTrending: false,
+        minAge: 2,
+        maxAge: 10,
+        gender: 'unisex',
+        imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80'
+        ],
+        videoUrl: '',
+        description: 'Paperless electronic drawing and handwriting pad with one-touch erase and screen lock. Eye-safe screen.'
+      },
+      {
+        id: 'p6',
+        name: 'Pretend Play Doctor Medical Kit with Carry Case',
+        category: 'Toys & Games',
+        price: 549,
+        originalPrice: 899,
+        stock: 'in_stock',
+        isTrending: false,
+        minAge: 3,
+        maxAge: 8,
+        gender: 'unisex',
+        imageUrl: 'https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=600&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=600&q=80'
+        ],
+        videoUrl: '',
+        description: 'Comprehensive doctor kit featuring stethoscope, thermometer, and realistic instruments for creative role-play.'
+      }
+    ];
+
+    let products = [];
+    let categoriesList = [];
+    let cart = [];
+    let currentCategory = 'all';
+    let currentGenderFilter = 'all';
+    let currentAgeFilter = 'all';
+    let filterTrendingOnly = false;
+    let currentSearchTerm = '';
+    let isAdminLoggedIn = false;
+
+    let storeSettings = {
+      whatsappNumber: '919876543210',
+      storeName: 'Khandelwal Gifts Centre',
+      logoUrl: ''
+    };
+
+    function convertGoogleDriveLink(url) {
+      if (!url) return '';
+      url = url.trim();
+      
+      if (url.includes('drive.google.com') || url.includes('drive.usercontent.google.com')) {
+        let fileId = '';
+        const matchD = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+        if (matchD && matchD[1]) {
+          fileId = matchD[1];
+        } else {
+          const matchId = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+          if (matchId && matchId[1]) {
+            fileId = matchId[1];
+          }
+        }
+
+        if (fileId) {
+          return `https://lh3.googleusercontent.com/d/${fileId}`;
+        }
+      }
+
+      return url;
+    }
+
+    function extractYouTubeEmbedUrl(url) {
+      if (!url) return '';
+      url = url.trim();
+      
+      // Standard YouTube watch
+      const matchWatch = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i);
+      if (matchWatch && matchWatch[1]) {
+        return `https://www.youtube.com/embed/${matchWatch[1]}?autoplay=0&rel=0`;
+      }
+      
+      // Google Drive video preview
+      if (url.includes('drive.google.com')) {
+        const matchD = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+        if (matchD && matchD[1]) {
+          return `https://drive.google.com/file/d/${matchD[1]}/preview`;
+        }
+      }
+
+      return url;
+    }
+
+    function initializeStoreData() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          products = JSON.parse(stored);
+        } else {
+          products = [...DEFAULT_PRODUCTS];
+          saveProductsToStorage();
+        }
+
+        const storedCats = localStorage.getItem(CATEGORIES_KEY);
+        if (storedCats) {
+          categoriesList = JSON.parse(storedCats);
+        } else {
+          categoriesList = [...DEFAULT_CATEGORIES];
+          saveCategoriesToStorage();
+        }
+
+        const storedSettings = localStorage.getItem(SETTINGS_KEY);
+        if (storedSettings) {
+          storeSettings = { ...storeSettings, ...JSON.parse(storedSettings) };
+        }
+      } catch (err) {
+        console.error('Data init fallback', err);
+        products = [...DEFAULT_PRODUCTS];
+        categoriesList = [...DEFAULT_CATEGORIES];
+      }
+
+      applyStoreLogo();
+      updateWhatsappLinks();
+      renderCategoryTabs();
+      renderAdminCategoryOptions();
+      renderAdminCategoriesManager();
+      renderProductCatalog();
+      renderAdminProductsList();
+    }
+
+    function applyStoreLogo() {
+      const logoImg = document.getElementById('storeLogoImg');
+      const defaultIcon = document.getElementById('storeLogoDefaultIcon');
+      const logoContainer = document.getElementById('storeLogoContainer');
+      const logoInput = document.getElementById('adminLogoUrlInput');
+
+      if (storeSettings.logoUrl && storeSettings.logoUrl.trim() !== '') {
+        const converted = convertGoogleDriveLink(storeSettings.logoUrl);
+        logoImg.src = converted;
+        logoImg.classList.remove('hidden');
+        defaultIcon.classList.add('hidden');
+        logoContainer.classList.add('bg-white', 'p-0.5');
+        logoContainer.classList.remove('bg-gradient-to-tr');
+        if (logoInput) logoInput.value = storeSettings.logoUrl;
+      } else {
+        logoImg.classList.add('hidden');
+        defaultIcon.classList.remove('hidden');
+        logoContainer.classList.remove('bg-white', 'p-0.5');
+        logoContainer.classList.add('bg-gradient-to-tr');
+      }
+    }
+
+    function previewLogoUrl() {
+      const val = document.getElementById('adminLogoUrlInput').value.trim();
+      const previewRow = document.getElementById('adminLogoPreviewRow');
+      const previewImg = document.getElementById('adminLogoPreviewImg');
+
+      if (!val) {
+        previewRow.classList.add('hidden');
+        return;
+      }
+
+      previewImg.src = convertGoogleDriveLink(val);
+      previewRow.classList.remove('hidden');
+      previewRow.classList.add('flex');
+    }
+
+    function saveProductsToStorage() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+    }
+
+    function saveCategoriesToStorage() {
+      localStorage.setItem(CATEGORIES_KEY, JSON.stringify(categoriesList));
+    }
+
+    function updateWhatsappLinks() {
+      const cleanPhone = storeSettings.whatsappNumber.replace(/[^0-9]/g, '');
+      const btn = document.getElementById('navWhatsappBtn');
+      if (btn) {
+        btn.href = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(`Hello! I would like to inquire about toys and gifts at ${storeSettings.storeName}.`)}`;
+      }
+      const adminInput = document.getElementById('adminWhatsappInput');
+      if (adminInput) {
+        adminInput.value = storeSettings.whatsappNumber;
+      }
+    }
+
+    function renderCategoryTabs() {
+      const container = document.getElementById('categoryTabsContainer');
+      const allTabs = ['all', ...categoriesList];
+
+      container.innerHTML = allTabs.map(cat => {
+        const isSelected = currentCategory === cat;
+        const displayName = cat === 'all' ? 'All Gifts' : cat;
+        return `
+          <button onclick="selectCategory('${cat}')" class="whitespace-nowrap px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold transition-all shadow-sm ${
+            isSelected 
+              ? 'bg-gradient-to-r from-fuchsia-600 to-indigo-600 text-white shadow-fuchsia-200' 
+              : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+          }">
+            ${displayName}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function selectCategory(cat) {
+      currentCategory = cat;
+      renderCategoryTabs();
+      renderProductCatalog();
+    }
+
+    function renderAdminCategoryOptions() {
+      const selectEl = document.getElementById('pCategory');
+      if (!selectEl) return;
+      selectEl.innerHTML = categoriesList.map(cat => `
+        <option value="${cat}">${cat}</option>
+      `).join('');
+    }
+
+    function renderAdminCategoriesManager() {
+      const listEl = document.getElementById('adminCategoriesList');
+      if (!listEl) return;
+
+      if (categoriesList.length === 0) {
+        listEl.innerHTML = `<p class="text-xs text-slate-400">No categories added yet.</p>`;
+        return;
+      }
+
+      listEl.innerHTML = categoriesList.map((cat, idx) => {
+        const count = products.filter(p => p.category === cat).length;
+        return `
+          <div class="flex items-center justify-between p-3 bg-white border border-slate-200 rounded-xl shadow-sm">
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-tag text-indigo-500 text-xs"></i>
+              <span class="text-xs font-bold text-slate-800">${cat}</span>
+              <span class="text-[10px] text-slate-400 font-semibold">(${count} items)</span>
+            </div>
+            <button onclick="deleteCategory('${cat}')" class="p-1.5 text-rose-500 hover:bg-rose-50 rounded-lg transition" title="Delete Category">
+              <i class="fa-solid fa-trash text-xs"></i>
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function addNewCategory() {
+      const input = document.getElementById('newCategoryInput');
+      const newCat = input.value.trim();
+
+      if (!newCat) {
+        showToast('Please enter a category name', 'warning');
+        return;
+      }
+
+      if (categoriesList.some(c => c.toLowerCase() === newCat.toLowerCase())) {
+        showToast('Category already exists!', 'warning');
+        return;
+      }
+
+      categoriesList.push(newCat);
+      saveCategoriesToStorage();
+      input.value = '';
+      renderCategoryTabs();
+      renderAdminCategoryOptions();
+      renderAdminCategoriesManager();
+      showToast(`Category '${newCat}' added successfully!`, 'success');
+    }
+
+    function deleteCategory(catName) {
+      if (categoriesList.length <= 1) {
+        showToast('At least one category must remain.', 'warning');
+        return;
+      }
+
+      categoriesList = categoriesList.filter(c => c !== catName);
+      saveCategoriesToStorage();
+      if (currentCategory === catName) currentCategory = 'all';
+
+      renderCategoryTabs();
+      renderAdminCategoryOptions();
+      renderAdminCategoriesManager();
+      renderProductCatalog();
+      showToast(`Category '${catName}' removed.`, 'info');
+    }
+
+    function renderProductCatalog() {
+      const grid = document.getElementById('productGrid');
+      const emptyState = document.getElementById('emptyCatalogState');
+
+      let filtered = products.filter(item => {
+        if (currentCategory !== 'all' && item.category !== currentCategory) return false;
+
+        if (filterTrendingOnly && !item.isTrending) return false;
+
+        if (currentGenderFilter !== 'all') {
+          if (item.gender !== 'unisex' && item.gender !== currentGenderFilter) return false;
+        }
+
+        if (currentAgeFilter !== 'all') {
+          if (currentAgeFilter === '0-3' && (item.maxAge < 0 || item.minAge > 3)) return false;
+          if (currentAgeFilter === '4-7' && (item.maxAge < 4 || item.minAge > 7)) return false;
+          if (currentAgeFilter === '8-12' && item.maxAge < 8) return false;
+        }
+
+        if (currentSearchTerm.trim() !== '') {
+          const q = currentSearchTerm.toLowerCase();
+          const matchName = item.name.toLowerCase().includes(q);
+          const matchCat = item.category.toLowerCase().includes(q);
+          const matchDesc = (item.description || '').toLowerCase().includes(q);
+          if (!matchName && !matchCat && !matchDesc) return false;
+        }
+
+        return true;
+      });
+
+      updateFilterPills();
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      grid.innerHTML = filtered.map(item => {
+        const coverImg = (item.images && item.images.length > 0) ? item.images[0] : item.imageUrl;
+        const directImg = convertGoogleDriveLink(coverImg);
+        const discount = item.originalPrice && item.originalPrice > item.price 
+          ? Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100) 
+          : 0;
+
+        const isOutOfStock = item.stock === 'out_of_stock';
+        const isLowStock = item.stock === 'low_stock';
+        const hasVideo = !!item.videoUrl;
+
+        return `
+          <div class="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1">
+            <div class="relative bg-slate-100 aspect-square overflow-hidden cursor-pointer" onclick="openProductDetailModal('${item.id}')">
+              <img src="${directImg}" alt="${item.name}" loading="lazy" onerror="this.src='https://placehold.co/400x350/f8fafc/64748b?text=Gift+Toy'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              
+              <!-- Badges -->
+              <div class="absolute top-1.5 left-1.5 sm:top-2.5 sm:left-2.5 flex flex-col gap-0.5 sm:gap-1 items-start">
+                ${item.isTrending ? `<span class="bg-amber-500 text-white text-[9px] sm:text-[10px] font-black px-1.5 py-0.5 rounded-full shadow-sm flex items-center gap-0.5">🔥 Trending</span>` : ''}
+                ${discount > 0 ? `<span class="bg-rose-500 text-white text-[9px] sm:text-[10px] font-black px-1.5 py-0.5 rounded-full shadow-sm">${discount}% OFF</span>` : ''}
+                ${isOutOfStock ? `<span class="bg-slate-800 text-white text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded-full shadow-sm">Out of Stock</span>` : ''}
+                ${isLowStock ? `<span class="bg-amber-500 text-white text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded-full shadow-sm">Low Stock</span>` : ''}
+              </div>
+
+              <!-- Video Icon Badge if available -->
+              ${hasVideo ? `
+                <div class="absolute top-1.5 right-1.5 sm:top-2.5 sm:right-2.5 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-slate-900/70 text-white flex items-center justify-center text-[10px] sm:text-xs shadow-md">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+              ` : ''}
+
+              <!-- Gender/Age Tag -->
+              <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2.5 sm:left-2.5 sm:right-2.5 flex items-center justify-between pointer-events-none">
+                <span class="bg-white/90 backdrop-blur text-slate-700 text-[8px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded-md sm:rounded-lg shadow-sm">
+                  ${item.minAge}-${item.maxAge} Yrs
+                </span>
+                <span class="bg-white/90 backdrop-blur text-[8px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded-md sm:rounded-lg shadow-sm ${item.gender === 'boy' ? 'text-blue-600' : item.gender === 'girl' ? 'text-pink-600' : 'text-purple-600'}">
+                  ${item.gender === 'boy' ? '👦 Boy' : item.gender === 'girl' ? '👧 Girl' : '🎁 Unisex'}
+                </span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-2 sm:p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[9px] sm:text-[10px] uppercase tracking-wider font-extrabold text-fuchsia-600 block mb-0.5 truncate">${item.category}</span>
+                <h3 onclick="openProductDetailModal('${item.id}')" class="cursor-pointer font-bold text-slate-800 text-xs sm:text-sm line-clamp-2 leading-snug hover:text-fuchsia-600 transition">${item.name}</h3>
+              </div>
+
+              <div class="mt-2 pt-2 border-t border-slate-100">
+                <div class="flex items-baseline justify-between mb-1.5 sm:mb-2.5">
+                  <div class="flex items-baseline gap-1">
+                    <span class="text-sm sm:text-lg font-black text-slate-900">₹${item.price}</span>
+                    ${item.originalPrice ? `<span class="text-[10px] sm:text-xs text-slate-400 line-through">₹${item.originalPrice}</span>` : ''}
+                  </div>
+                  <button onclick="openProductDetailModal('${item.id}')" class="text-[10px] sm:text-[11px] text-indigo-600 font-bold hover:underline">
+                    View &gt;
+                  </button>
+                </div>
+
+                <div class="grid grid-cols-2 gap-1 sm:gap-1.5">
+                  <button onclick="addToCart('${item.id}')" ${isOutOfStock ? 'disabled' : ''} class="w-full py-1.5 sm:py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-bold transition flex items-center justify-center gap-1 ${isOutOfStock ? 'opacity-50 cursor-not-allowed' : ''}">
+                    <i class="fa-solid fa-cart-plus text-[10px]"></i>
+                    <span>Add</span>
+                  </button>
+
+                  <button onclick="buyNowWhatsApp('${item.id}')" ${isOutOfStock ? 'disabled' : ''} class="w-full py-1.5 sm:py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-bold transition flex items-center justify-center gap-1 ${isOutOfStock ? 'opacity-50 cursor-not-allowed' : ''}">
+                    <i class="fa-brands fa-whatsapp text-xs"></i>
+                    <span>Buy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function setFilter(type, value) {
+      if (type === 'trending') {
+        filterTrendingOnly = !filterTrendingOnly;
+        const btn = document.getElementById('filterTrendingBtn');
+        if (filterTrendingOnly) {
+          btn.classList.add('bg-amber-500', 'text-white', 'border-amber-500');
+          btn.classList.remove('bg-amber-50', 'text-amber-800', 'border-amber-300');
+        } else {
+          btn.classList.remove('bg-amber-500', 'text-white', 'border-amber-500');
+          btn.classList.add('bg-amber-50', 'text-amber-800', 'border-amber-300');
+        }
+      } else if (type === 'gender') {
+        currentGenderFilter = value;
+      } else if (type === 'age') {
+        currentAgeFilter = value;
+      }
+      renderProductCatalog();
+    }
+
+    function handleSearch() {
+      currentSearchTerm = document.getElementById('searchInput').value;
+      renderProductCatalog();
+    }
+
+    function updateFilterPills() {
+      const pillsContainer = document.getElementById('filterPills');
+      const activeRow = document.getElementById('activeFiltersRow');
+      let pills = [];
+
+      if (filterTrendingOnly) pills.push(`🔥 Trending Only`);
+      if (currentCategory !== 'all') pills.push(`Category: ${currentCategory}`);
+      if (currentGenderFilter !== 'all') pills.push(`Gender: ${currentGenderFilter === 'boy' ? 'Boy' : 'Girl'}`);
+      if (currentAgeFilter !== 'all') pills.push(`Age: ${currentAgeFilter} Yrs`);
+      if (currentSearchTerm.trim() !== '') pills.push(`Search: "${currentSearchTerm}"`);
+
+      if (pills.length > 0) {
+        activeRow.classList.remove('hidden');
+        activeRow.classList.add('flex');
+        pillsContainer.innerHTML = pills.map(p => `
+          <span class="bg-fuchsia-100 text-fuchsia-800 font-bold px-2 py-0.5 rounded-lg flex items-center gap-1">
+            ${p}
+          </span>
+        `).join('');
+      } else {
+        activeRow.classList.add('hidden');
+        activeRow.classList.remove('flex');
+      }
+    }
+
+    function clearAllFilters() {
+      currentCategory = 'all';
+      currentGenderFilter = 'all';
+      currentAgeFilter = 'all';
+      filterTrendingOnly = false;
+      currentSearchTerm = '';
+      document.getElementById('searchInput').value = '';
+      const btn = document.getElementById('filterTrendingBtn');
+      if (btn) {
+        btn.classList.remove('bg-amber-500', 'text-white', 'border-amber-500');
+        btn.classList.add('bg-amber-50', 'text-amber-800', 'border-amber-300');
+      }
+      renderCategoryTabs();
+      renderProductCatalog();
+    }
+
+    function openProductDetailModal(productId) {
+      const item = products.find(p => p.id === productId);
+      if (!item) return;
+
+      const modal = document.getElementById('productDetailModal');
+      document.getElementById('modalTitle').innerText = item.name;
+      document.getElementById('modalPrice').innerText = `₹${item.price}`;
+      document.getElementById('modalCategoryTag').innerText = item.category;
+      document.getElementById('modalDesc').innerText = item.description || 'No additional details provided.';
+      document.getElementById('modalAgeBadge').innerText = `${item.minAge}-${item.maxAge} Years`;
+      document.getElementById('modalGenderBadge').innerText = item.gender === 'boy' ? '👦 Boy' : item.gender === 'girl' ? '👧 Girl' : '🎁 Unisex';
+
+      // Stock badge
+      const stockBadge = document.getElementById('modalStockBadge');
+      if (item.stock === 'in_stock') {
+        stockBadge.className = 'px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-xl';
+        stockBadge.innerText = 'In Stock';
+      } else if (item.stock === 'low_stock') {
+        stockBadge.className = 'px-2.5 py-1 bg-amber-50 text-amber-700 rounded-xl';
+        stockBadge.innerText = 'Low Stock';
+      } else {
+        stockBadge.className = 'px-2.5 py-1 bg-rose-50 text-rose-700 rounded-xl';
+        stockBadge.innerText = 'Out of Stock';
+      }
+
+      // Trending Badge
+      const trendBadge = document.getElementById('modalTrendingBadge');
+      if (item.isTrending) trendBadge.classList.remove('hidden');
+      else trendBadge.classList.add('hidden');
+
+      // Discount
+      const origPriceEl = document.getElementById('modalOriginalPrice');
+      const discTagEl = document.getElementById('modalDiscountTag');
+      if (item.originalPrice && item.originalPrice > item.price) {
+        origPriceEl.innerText = `₹${item.originalPrice}`;
+        const disc = Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100);
+        discTagEl.innerText = `${disc}% OFF`;
+        origPriceEl.classList.remove('hidden');
+        discTagEl.classList.remove('hidden');
+      } else {
+        origPriceEl.classList.add('hidden');
+        discTagEl.classList.add('hidden');
+      }
+
+      // Build media gallery: images list + video if present
+      const imageList = (item.images && item.images.length > 0) ? item.images : [item.imageUrl];
+      const thumbsContainer = document.getElementById('modalThumbnailsRow');
+      const mainImg = document.getElementById('modalMainImg');
+      const videoPlayer = document.getElementById('modalVideoPlayer');
+
+      // Reset to first image
+      mainImg.src = convertGoogleDriveLink(imageList[0]);
+      mainImg.classList.remove('hidden');
+      videoPlayer.classList.add('hidden');
+      videoPlayer.innerHTML = '';
+
+      let thumbsHtml = imageList.map((imgUrl, i) => {
+        const converted = convertGoogleDriveLink(imgUrl);
+        return `
+          <button onclick="switchModalMedia('img', '${converted}')" class="w-14 h-14 rounded-xl border-2 border-slate-200 hover:border-fuchsia-500 overflow-hidden flex-shrink-0">
+            <img src="${converted}" class="w-full h-full object-cover">
+          </button>
+        `;
+      }).join('');
+
+      if (item.videoUrl && item.videoUrl.trim() !== '') {
+        const embedVideoUrl = extractYouTubeEmbedUrl(item.videoUrl);
+        thumbsHtml += `
+          <button onclick="switchModalMedia('video', '${embedVideoUrl}')" class="w-14 h-14 rounded-xl border-2 border-indigo-200 bg-indigo-50 hover:border-indigo-600 flex flex-col items-center justify-center flex-shrink-0 text-indigo-700">
+            <i class="fa-solid fa-play text-sm"></i>
+            <span class="text-[9px] font-black uppercase mt-0.5">Video</span>
+          </button>
+        `;
+      }
+
+      thumbsContainer.innerHTML = thumbsHtml;
+
+      // Action buttons
+      const addBtn = document.getElementById('modalAddToCartBtn');
+      const buyBtn = document.getElementById('modalBuyNowBtn');
+      addBtn.onclick = () => { addToCart(item.id); closeProductDetailModal(); };
+      buyBtn.onclick = () => { buyNowWhatsApp(item.id); };
+
+      modal.classList.remove('hidden');
+    }
+
+    function switchModalMedia(type, source) {
+      const mainImg = document.getElementById('modalMainImg');
+      const videoPlayer = document.getElementById('modalVideoPlayer');
+
+      if (type === 'img') {
+        videoPlayer.classList.add('hidden');
+        videoPlayer.innerHTML = '';
+        mainImg.src = source;
+        mainImg.classList.remove('hidden');
+      } else if (type === 'video') {
+        mainImg.classList.add('hidden');
+        videoPlayer.classList.remove('hidden');
+        videoPlayer.innerHTML = `
+          <iframe src="${source}" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `;
+      }
+    }
+
+    function closeProductDetailModal() {
+      const modal = document.getElementById('productDetailModal');
+      const videoPlayer = document.getElementById('modalVideoPlayer');
+      videoPlayer.innerHTML = '';
+      modal.classList.add('hidden');
+    }
+
+    function addToCart(productId) {
+      const item = products.find(p => p.id === productId);
+      if (!item) return;
+
+      const existing = cart.find(c => c.id === productId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...item, qty: 1 });
+      }
+
+      updateCartBadge();
+      showToast(`'${item.name}' added to cart!`, 'success');
+    }
+
+    function updateCartBadge() {
+      const count = cart.reduce((acc, cur) => acc + cur.qty, 0);
+      const badge = document.getElementById('cartCountBadge');
+      if (count > 0) {
+        badge.innerText = count;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+      renderCartDrawer();
+    }
+
+    function toggleCartModal(show) {
+      const modal = document.getElementById('cartModal');
+      if (show) {
+        modal.classList.remove('hidden');
+        renderCartDrawer();
+      } else {
+        modal.classList.add('hidden');
+      }
+    }
+
+    function renderCartDrawer() {
+      const list = document.getElementById('cartItemsList');
+      const emptyState = document.getElementById('cartEmptyState');
+      const footer = document.getElementById('cartFooter');
+      const subtotalEl = document.getElementById('cartSubtotal');
+
+      if (cart.length === 0) {
+        list.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        footer.classList.add('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      footer.classList.remove('hidden');
+
+      let total = 0;
+      list.innerHTML = cart.map(item => {
+        const itemTotal = item.price * item.qty;
+        total += itemTotal;
+        const img = convertGoogleDriveLink(item.imageUrl || (item.images && item.images[0]));
+        return `
+          <div class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200/80 rounded-2xl">
+            <img src="${img}" class="w-14 h-14 object-cover rounded-xl border border-slate-200">
+            <div class="flex-1 min-w-0">
+              <h4 class="font-bold text-slate-800 text-xs truncate">${item.name}</h4>
+              <span class="text-xs font-black text-fuchsia-600">₹${item.price}</span>
+            </div>
+            <div class="flex items-center gap-1.5 bg-white border border-slate-200 px-2 py-1 rounded-xl">
+              <button onclick="changeCartQty('${item.id}', -1)" class="text-xs font-black text-slate-500 hover:text-slate-800 px-1">-</button>
+              <span class="text-xs font-black px-1">${item.qty}</span>
+              <button onclick="changeCartQty('${item.id}', 1)" class="text-xs font-black text-slate-500 hover:text-slate-800 px-1">+</button>
+            </div>
+            <button onclick="removeFromCart('${item.id}')" class="text-slate-400 hover:text-rose-500 p-1">
+              <i class="fa-solid fa-trash text-xs"></i>
+            </button>
+          </div>
+        `;
+      }).join('');
+
+      subtotalEl.innerText = `₹${total}`;
+    }
+
+    function changeCartQty(id, delta) {
+      const item = cart.find(c => c.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(c => c.id !== id);
+      }
+      updateCartBadge();
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(c => c.id !== id);
+      updateCartBadge();
+    }
+
+    function checkoutViaWhatsApp() {
+      if (cart.length === 0) return;
+      const custName = document.getElementById('custName').value.trim();
+      const custPhone = document.getElementById('custPhone').value.trim();
+      const custAddress = document.getElementById('custAddress').value.trim();
+
+      if (!custName || !custPhone || !custAddress) {
+        showToast('Please enter Name, Mobile Number and Delivery Address!', 'warning');
+        return;
+      }
+
+      let total = 0;
+      let orderText = `🛍️ *New Order - ${storeSettings.storeName}*\n\n`;
+      orderText += `👤 *Customer Name:* ${custName}\n`;
+      orderText += `📞 *Contact Number:* ${custPhone}\n`;
+      orderText += `📍 *Delivery Address:* ${custAddress}\n\n`;
+      orderText += `📦 *Ordered Items:*\n`;
+
+      cart.forEach((item, idx) => {
+        const itemTotal = item.price * item.qty;
+        total += itemTotal;
+        orderText += `${idx + 1}. ${item.name} (${item.qty}x) = ₹${itemTotal}\n`;
+      });
+
+      orderText += `\n💰 *Total Amount:* ₹${total}\n`;
+      orderText += `\nPlease confirm my order and share estimated delivery timeline. Thank you!`;
+
+      const cleanPhone = storeSettings.whatsappNumber.replace(/[^0-9]/g, '');
+      const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(orderText)}`;
+      window.open(waUrl, '_blank');
+      toggleCartModal(false);
+    }
+
+    function buyNowWhatsApp(productId) {
+      const item = products.find(p => p.id === productId);
+      if (!item) return;
+
+      const orderText = `Hello! I want to order this item from ${storeSettings.storeName}:\n\n🎁 *Product:* ${item.name}\n💰 *Price:* ₹${item.price}\n📦 *Category:* ${item.category}\n\nPlease share delivery and payment details.`;
+      const cleanPhone = storeSettings.whatsappNumber.replace(/[^0-9]/g, '');
+      const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(orderText)}`;
+      window.open(waUrl, '_blank');
+    }
+
+    function openAdminAuthModal() {
+      if (isAdminLoggedIn) {
+        document.getElementById('adminModal').classList.remove('hidden');
+        renderAdminProductsList();
+      } else {
+        document.getElementById('adminAuthModal').classList.remove('hidden');
+        const passInput = document.getElementById('adminPasswordInput');
+        passInput.value = '';
+        setTimeout(() => passInput.focus(), 150);
+      }
+    }
+
+    function closeAdminAuthModal() {
+      document.getElementById('adminAuthModal').classList.add('hidden');
+    }
+
+    function verifyAdminPassword() {
+      const pass = document.getElementById('adminPasswordInput').value.trim();
+      const storedPass = localStorage.getItem(ADMIN_PASS_KEY) || 'admin123';
+
+      if (pass === storedPass) {
+        isAdminLoggedIn = true;
+        closeAdminAuthModal();
+        document.getElementById('adminModal').classList.remove('hidden');
+        renderAdminCategoryOptions();
+        renderAdminCategoriesManager();
+        renderAdminProductsList();
+        showToast('Welcome to The Gift Tree Admin Dashboard!', 'success');
+      } else {
+        showToast('Incorrect passcode! Please try again.', 'error');
+      }
+    }
+
+    function closeAdminModal() {
+      document.getElementById('adminModal').classList.add('hidden');
+    }
+
+    function logoutAdmin() {
+      isAdminLoggedIn = false;
+      closeAdminModal();
+      showToast('Logged out successfully', 'info');
+    }
+
+    function switchAdminTab(tab) {
+      const tabs = ['products', 'add', 'categories', 'settings'];
+      tabs.forEach(t => {
+        const el = document.getElementById(`adminTab${t.charAt(0).toUpperCase() + t.slice(1)}`);
+        const btn = document.getElementById(`adminTabBtn${t.charAt(0).toUpperCase() + t.slice(1)}`);
+        if (t === tab) {
+          el.classList.remove('hidden');
+          btn.classList.add('border-indigo-600', 'text-indigo-600');
+          btn.classList.remove('border-transparent', 'text-slate-500');
+        } else {
+          el.classList.add('hidden');
+          btn.classList.remove('border-indigo-600', 'text-indigo-600');
+          btn.classList.add('border-transparent', 'text-slate-500');
+        }
+      });
+    }
+
+    function renderAdminProductsList() {
+      const tbody = document.getElementById('adminProductsTableBody');
+      const badge = document.getElementById('adminTotalItemsBadge');
+      badge.innerText = products.length;
+
+      tbody.innerHTML = products.map(item => {
+        const cover = (item.images && item.images.length > 0) ? item.images[0] : item.imageUrl;
+        const img = convertGoogleDriveLink(cover);
+        const photoCount = (item.images && item.images.length > 0) ? item.images.length : (item.imageUrl ? 1 : 0);
+        return `
+          <tr class="hover:bg-slate-50/80 transition">
+            <td class="p-3">
+              <div class="relative w-10 h-10">
+                <img src="${img}" onerror="this.src='https://placehold.co/100x100?text=Gift'" class="w-full h-full object-cover rounded-xl border border-slate-200">
+                ${photoCount > 1 ? `<span class="absolute -top-1 -right-1 bg-indigo-600 text-white text-[9px] font-bold px-1 rounded-full">${photoCount}</span>` : ''}
+              </div>
+            </td>
+            <td class="p-3">
+              <p class="font-bold text-slate-800">${item.name}</p>
+              <div class="flex items-center gap-1 mt-0.5">
+                <span class="text-[10px] text-indigo-600 font-semibold">${item.category}</span>
+                ${item.videoUrl ? `<span class="text-[9px] bg-fuchsia-100 text-fuchsia-700 px-1 rounded font-bold"><i class="fa-solid fa-video"></i> Video</span>` : ''}
+              </div>
+            </td>
+            <td class="p-3">
+              <span class="font-black text-slate-900">₹${item.price}</span>
+              ${item.originalPrice ? `<span class="text-[10px] text-slate-400 line-through block">₹${item.originalPrice}</span>` : ''}
+            </td>
+            <td class="p-3">
+              <button onclick="toggleTrending('${item.id}')" class="px-2 py-0.5 rounded-full text-[10px] font-extrabold cursor-pointer ${item.isTrending ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-slate-100 text-slate-400'}">
+                ${item.isTrending ? '🔥 Trending' : 'Normal'}
+              </button>
+            </td>
+            <td class="p-3">
+              <button onclick="toggleStockStatus('${item.id}')" class="px-2 py-0.5 rounded-full text-[10px] font-black cursor-pointer ${
+                item.stock === 'in_stock' ? 'bg-emerald-100 text-emerald-800' :
+                item.stock === 'low_stock' ? 'bg-amber-100 text-amber-800' : 'bg-rose-100 text-rose-800'
+              }">
+                ${item.stock === 'in_stock' ? 'In Stock' : item.stock === 'low_stock' ? 'Low Stock' : 'Out of Stock'}
+              </button>
+            </td>
+            <td class="p-3 text-right space-x-1 whitespace-nowrap">
+              <button onclick="editProduct('${item.id}')" class="p-1.5 text-indigo-600 hover:bg-indigo-50 rounded-lg" title="Edit">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button onclick="deleteProduct('${item.id}')" class="p-1.5 text-rose-600 hover:bg-rose-50 rounded-lg" title="Delete">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function toggleTrending(id) {
+      const item = products.find(p => p.id === id);
+      if (!item) return;
+      item.isTrending = !item.isTrending;
+      saveProductsToStorage();
+      renderAdminProductsList();
+      renderProductCatalog();
+      showToast(`'${item.name}' trending status updated!`, 'info');
+    }
+
+    function toggleStockStatus(id) {
+      const item = products.find(p => p.id === id);
+      if (!item) return;
+
+      if (item.stock === 'in_stock') item.stock = 'low_stock';
+      else if (item.stock === 'low_stock') item.stock = 'out_of_stock';
+      else item.stock = 'in_stock';
+
+      saveProductsToStorage();
+      renderAdminProductsList();
+      renderProductCatalog();
+      showToast(`'${item.name}' stock status updated`, 'info');
+    }
+
+    function handleProductFormSubmit(e) {
+      e.preventDefault();
+      const id = document.getElementById('editProductId').value || 'p_' + Date.now();
+      const name = document.getElementById('pName').value.trim();
+      const category = document.getElementById('pCategory').value.trim();
+      const price = parseFloat(document.getElementById('pPrice').value);
+      const originalPrice = parseFloat(document.getElementById('pOriginalPrice').value) || null;
+      const stock = document.getElementById('pStock').value;
+      const isTrending = document.getElementById('pIsTrending').checked;
+      const minAge = parseInt(document.getElementById('pMinAge').value) || 0;
+      const maxAge = parseInt(document.getElementById('pMaxAge').value) || 12;
+      const gender = document.getElementById('pGender').value;
+      const description = document.getElementById('pDesc').value.trim();
+      const videoUrl = document.getElementById('pVideoUrl').value.trim();
+
+      // Gather multiple images
+      const img1 = document.getElementById('pImageUrl1').value.trim();
+      const img2 = document.getElementById('pImageUrl2').value.trim();
+      const img3 = document.getElementById('pImageUrl3').value.trim();
+      const img4 = document.getElementById('pImageUrl4').value.trim();
+
+      const images = [img1, img2, img3, img4].filter(u => u && u.length > 0);
+      const imageUrl = images[0] || '';
+
+      const existingIndex = products.findIndex(p => p.id === id);
+      const newProduct = {
+        id,
+        name,
+        category,
+        price,
+        originalPrice,
+        stock,
+        isTrending,
+        minAge,
+        maxAge,
+        gender,
+        imageUrl,
+        images,
+        videoUrl,
+        description
+      };
+
+      if (existingIndex > -1) {
+        products[existingIndex] = newProduct;
+        showToast('Product updated successfully!', 'success');
+      } else {
+        products.unshift(newProduct);
+        showToast('New product added to store!', 'success');
+      }
+
+      saveProductsToStorage();
+      cancelProductEdit();
+      renderCategoryTabs();
+      renderProductCatalog();
+      renderAdminProductsList();
+      switchAdminTab('products');
+    }
+
+    function editProduct(id) {
+      const item = products.find(p => p.id === id);
+      if (!item) return;
+
+      document.getElementById('editProductId').value = item.id;
+      document.getElementById('pName').value = item.name;
+      document.getElementById('pCategory').value = item.category;
+      document.getElementById('pPrice').value = item.price;
+      document.getElementById('pOriginalPrice').value = item.originalPrice || '';
+      document.getElementById('pStock').value = item.stock || 'in_stock';
+      document.getElementById('pIsTrending').checked = !!item.isTrending;
+      document.getElementById('pMinAge').value = item.minAge;
+      document.getElementById('pMaxAge').value = item.maxAge;
+      document.getElementById('pGender').value = item.gender;
+      document.getElementById('pDesc').value = item.description || '';
+      document.getElementById('pVideoUrl').value = item.videoUrl || '';
+
+      // Populate multiple image inputs
+      const imgs = (item.images && item.images.length > 0) ? item.images : [item.imageUrl || ''];
+      document.getElementById('pImageUrl1').value = imgs[0] || '';
+      document.getElementById('pImageUrl2').value = imgs[1] || '';
+      document.getElementById('pImageUrl3').value = imgs[2] || '';
+      document.getElementById('pImageUrl4').value = imgs[3] || '';
+
+      document.getElementById('formHeaderTitle').innerText = 'Edit Product';
+      switchAdminTab('add');
+    }
+
+    function cancelProductEdit() {
+      document.getElementById('productForm').reset();
+      document.getElementById('editProductId').value = '';
+      document.getElementById('formHeaderTitle').innerText = 'Add New Product';
+    }
+
+    function deleteProduct(id) {
+      products = products.filter(p => p.id !== id);
+      saveProductsToStorage();
+      renderCategoryTabs();
+      renderProductCatalog();
+      renderAdminProductsList();
+      showToast('Product removed', 'info');
+    }
+
+    function saveStoreSettings() {
+      const phone = document.getElementById('adminWhatsappInput').value.trim();
+      const logoUrl = document.getElementById('adminLogoUrlInput').value.trim();
+
+      if (phone) {
+        storeSettings.whatsappNumber = phone;
+      }
+      storeSettings.logoUrl = logoUrl;
+
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify(storeSettings));
+      applyStoreLogo();
+      updateWhatsappLinks();
+      showToast('Store settings saved successfully!', 'success');
+    }
+
+    function exportCatalogData() {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({
+        products,
+        categoriesList,
+        storeSettings,
+        exportDate: new Date().toISOString()
+      }, null, 2));
+
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", `the_gift_tree_backup_${new Date().toISOString().slice(0,10)}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+
+      showToast('Backup file downloaded! Store it in your Google Drive.', 'success');
+    }
+
+    function importCatalogData(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const imported = JSON.parse(e.target.result);
+          if (Array.isArray(imported.products)) {
+            products = imported.products;
+            if (Array.isArray(imported.categoriesList)) categoriesList = imported.categoriesList;
+            if (imported.storeSettings) storeSettings = imported.storeSettings;
+            saveProductsToStorage();
+            saveCategoriesToStorage();
+            localStorage.setItem(SETTINGS_KEY, JSON.stringify(storeSettings));
+            initializeStoreData();
+            showToast('Catalog restored successfully!', 'success');
+          } else {
+            showToast('Invalid backup file format!', 'error');
+          }
+        } catch (err) {
+          showToast('Error reading file!', 'error');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function resetDefaultProducts() {
+      products = [...DEFAULT_PRODUCTS];
+      categoriesList = [...DEFAULT_CATEGORIES];
+      saveProductsToStorage();
+      saveCategoriesToStorage();
+      initializeStoreData();
+      showToast('Default products loaded', 'info');
+    }
+
+    function showToast(message, type = 'info') {
+      const toast = document.getElementById('toastNotification');
+      const msg = document.getElementById('toastMessage');
+      const icon = document.getElementById('toastIcon');
+
+      msg.innerText = message;
+      if (type === 'success') {
+        icon.className = 'fa-solid fa-circle-check text-emerald-400';
+      } else if (type === 'warning') {
+        icon.className = 'fa-solid fa-triangle-exclamation text-amber-400';
+      } else if (type === 'error') {
+        icon.className = 'fa-solid fa-circle-xmark text-rose-400';
+      } else {
+        icon.className = 'fa-solid fa-circle-info text-blue-400';
+      }
+
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3500);
+    }
+
+    window.onload = function () {
+      initializeStoreData();
+    };
+  </script>
+</body>
+</html>
